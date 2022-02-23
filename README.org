@@ -10,6 +10,5 @@ This hacky script very simply transfers events from Mac's native calendar to Ema
   #+begin_src bash
 brew install ical-buddy
   #+end_src
-
 * Known Issues
 One of the issues going into making this was to do with icalBuddy's permissions. I banged my head against the wall long enough trying to figure it out, so I won't try again for a few weeks at least, but icalBuddy will not function properly on anything other than Mac's defaul terminal. Maybe creating a shortcut will work through the automator app, but other terminals like Alacritty, and most annoyingly Emacs, return an error when running icalBuddy commands. Please let me know if you get it to work.
