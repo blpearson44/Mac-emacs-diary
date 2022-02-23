@@ -1,0 +1,15 @@
+#+TITLE: Readme
+
+* Transfer Calendar Events from Mac to diary
+This hacky script very simply transfers events from Mac's native calendar to Emacs diary.
+* Prerequisites
++ Python 3.5+
++ Datetime
++ [[https://github.com/ali-rantakari/icalBuddy][icalBuddy]]
+  icalBuddy does most of the heavy lifting, and it hasn't been updated since 2014, so Apple could change something that breaks it at any point. Yay. However, it is still available on Homebrew which is where I would recommend downloading it.
+  #+begin_src bash
+brew install ical-buddy
+  #+end_src
+
+* Known Issues
+One of the issues going into making this was to do with icalBuddy's permissions. I banged my head against the wall long enough trying to figure it out, so I won't try again for a few weeks at least, but icalBuddy will not function properly on anything other than Mac's defaul terminal. Maybe creating a shortcut will work through the automator app, but other terminals like Alacritty, and most annoyingly Emacs, return an error when running icalBuddy commands. Please let me know if you get it to work.
