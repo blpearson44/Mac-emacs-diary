@@ -38,14 +38,14 @@ if __name__ == "__main__":
 
     # and now for annoying regex
     events_string = process.stdout.decode()
-    dates = re.split("\d\d/\d\d/\d\d\d\d", events_string)
-    dates.pop(0)
+    dates = re.findall("\d\d/\d\d/\d\d\d\d", events_string)
+    events = re.split("\d\d/\d\d/\d\d\d\d", events_string)
+    events.pop(0)
     today = date.today()
     with open(DIARY_PATH, "w") as diary:
-        for i in range(len(dates)):
-            day = today + timedelta(days=i)
-            diary.write(day.strftime("%m/%d/%Y"))
-            this_day = dates[i].split("CAL")
+        for i in range(len(events)):
+            diary.write(dates[i])
+            this_day = events[i].split("CAL")
             for event in this_day:
                 event = event.replace("\n", " ")
                 event = event.replace(": ------------------------", "")
